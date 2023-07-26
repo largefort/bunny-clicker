@@ -1,0 +1,317 @@
+
+Let's make a game!
+    name:bunny clicker
+    by:jafet
+    desc:lol
+    created:25/7/2023
+    updated:25/7/2023
+    version:1
+
+
+Settings
+    background:	background:stuff/meadow.jpg
+    building cost increase:115%
+    building cost refund:50%
+    spritesheet:	spritesheet:icons, 48 by 48, stuff/bunnyIcons.png
+    stylesheet:stylesheet:stuff/bigBlue.css   
+
+
+Layout
+
+        *buttons
+            contains:containsbutton
+            header:bunnyButton
+                        
+    
+        *Make a bunny
+            contains:Resources
+            header:bunnies
+                        
+    
+        *goldenCarrot
+            contains:|Golden carrots
+            header:goldenCarrot
+                        
+    
+        *Shinies
+            contains:luckyBunny
+            header:Shinies
+                        
+    
+        *luckyBunny
+            contains:bunnies
+            header:Bunny
+                        
+    
+        *gold carrot
+            contains:goldencarrots
+            header:carrots
+                        
+    
+        *shinies
+            contains:golden bunny
+            header:golden buildings
+                        
+    
+        *golden buildings
+            contains:bun
+            header:bunbun
+                        
+    
+        *bunny
+            contains:bunnies
+            header:time boost
+                        
+    
+        *uprgades
+            contains:upgrades
+            header:shop
+                        
+    
+        *lol
+            contains:lol memes button
+            header:memes
+                        
+    
+        *memes
+            contains:memes
+            header:memes
+                        
+    
+Buttons
+    *4
+        name:bunnyButton
+        description:		desc:Click this little bunny to get more bunnies!
+
+        on click:on click:anim icon wobble            
+
+        on click:anim icon wobble            
+
+        on click:		on click:yield 1 bunny            
+
+        on click:wobble            
+
+        icon:icon:stuff/bunny.png
+        no text
+        class:class:bigButton hasFlares
+        icon class:shadowed
+        tooltip origin:		tooltip origin:bottom
+        tooltip class:tooltip class:red
+                
+
+Resources        
+
+    *bunny
+        name:Bunnies
+        desc:		desc:These are your bunnies. You can use them to purchase things. Your goal is to have as many bunnies as possible!
+        icon:icon:icons[0,0]
+        class:class:noBackground
+        show earned
+
+    *goldenCarrot
+        name:goldenCarrots
+        desc:		desc:These shiny carrots are terribly rare, terribly precious and terribly delicious!
+        icon:
+        class:class:noBackground
+        hidden when 0
+
+        
+Shinies
+
+    *luckyBunny
+        movement:movement:onRight moveLeft fade bounce:0.05
+        frequency:frequency:60
+        frequency variation:frequency variation:30
+        icon:icon:stuff/luckyBunny.png
+        class:class:bigButton
+
+
+Buildings
+    *TEMPLATE
+        on click:anim glow
+        
+
+    *cage
+        name:cages
+        desc:desc:A tiny little cage.<//><b>Effect:</b><.>Produces 1 rabbit every 10 seconds.
+        icon:icon:icons[3,0]
+        cost:cost:15 bunnies             
+
+        on tick:		on tick:yield 0.1 bunny                
+
+        on tick:0.1                
+
+        on tick:bunny                
+
+        on tick:texteffect                
+
+        on tick:unlocked                
+
+        on tick:glow                
+
+        on tick:on tick:yield 0.1                
+
+        on tick:wobble                
+
+        unlocked  
+                      
+
+    *hutch
+        name:rabbit hutches
+        desc:		desc:A tiny little cage.<//><b>Effect:</b><.>Produces 1 rabbit every 10 seconds.
+        icon:icon:icons[3,0]
+        cost:		cost:15 bunnies             
+
+        on tick:on tick:yield 0.1 bunny Y                
+
+        on tick:bunnies Y                
+
+        on tick:yield 0.5 bunnies Y                
+
+        on tick:wobble Y                
+
+        unlocked  
+                      
+
+    *coop
+        name:coops
+        desc:		desc:A much nicer rabbit home where full bunny families can live.<//><b>Effect:</b><.>Produces 5 rabbits per second.
+        icon:		icon:icons[3,2]
+        cost:cost:600 bunnies             
+
+        on tick:yield 5 bunnies Y                
+
+        on tick:texteffect Y                
+
+        on tick:glow Y                
+
+        on tick:wobble Y                
+
+        on tick:on tick:yield 5 b5 bunnies                
+
+        on tick:rabbits                
+
+        on tick:rabbits Y                
+
+        unlocked  
+                      
+
+    *pen
+        name:rabbit pens
+        desc:		desc:A much nicer rabbit home where full bunny families can live.<//><b>Effect:</b><.>Produces 5 rabbits per second.
+        icon:		icon:icons[3,2]
+        cost:cost: 4000 bunnies             
+
+        unlocked  
+                      
+
+    *meadows
+        name:rabbit meadows
+        desc:		desc:A wide open space full of shade and lush grass.<//><b>Effect:</b><.>Produces 90 rabbits per second.
+        icon:		icon:icons[3,4]
+        cost:		cost:20000 bunnies             
+
+        unlocked  
+                      
+
+    *village
+        name:rabbit village
+        desc:		desc:Your bunnies are building their own villages now!<//><b>Effect:</b><.>Produces 300 rabbits per second.
+        icon:		icon:icons[3,5]
+        cost:		cost:200000 bunnies, 1 goldenCarrot             
+
+        unlocked  
+                      
+
+    *city
+        name:cities
+        desc:		desc:A bustling little city, populated with busy rabbits.<//><b>Effect:</b><.>Produces 1000 rabbits per second.
+        icon:		icon:icons[3,6]
+        cost:		cost:3000000 bunnies, 4 goldenCarrots             
+
+        unlocked  
+                      
+
+    *citadel
+        name:citadels
+        desc:		desc:An ornate palace standing on the moon, ruled by bunny kings and queens and staffed with royal bunny guards.<//><b>Effect:</b><.>Produces 4000 rabbits per second.
+        icon:		icon:icons[3,7]
+        cost:		cost:70000000 bunnies, 16 goldenCarrots             
+
+        unlocked  
+                      
+
+
+Upgrades
+    *TEMPLATE
+        on click:anim glow
+                
+
+    *parsley
+        name:parsley
+        desc:		desc:A nice little supplement to your bunnies' diet.<//><b>Effect:</b><.>+1 bunny/click
+        icon:		icon:icons[1,1]
+        cost:		cost:100 bunnies
+        req:		req:10 bunnies:earned
+
+    *spinach
+        name:spinach
+        desc:		desc:Big tasty leaves, perfect for hungry bunnies.<//><b>Effect:</b><.>+1 bunny/click
+        icon:		icon:icons[1,2]
+        cost:cost:200 bunnies
+        req:		req:50 bunnies:earned
+
+    *lettuce
+        name:lettuce
+        desc:		desc:Frilly greens loved by all bunnies.<//><b>Effect:</b><.>+1 bunny/click
+        icon:		icon:icons[1,3]
+        cost:cost:400 bunnies
+        req:		req:200 bunnies:earned
+
+    *broccoli
+        name:broccoli
+        desc:		desc:Crunchy greens that look like little trees.<//><b>Effect:</b><.>bunnies/click x2<.>bunny production +5%
+        icon:		icon:icons[1,4]
+        cost:cost 3000 bunnies
+        req:req:1000 bunnies:earned
+
+    *apple
+        name:apple
+        desc:		desc:Nice pieces of juicy red apples.<//><b>Effect:</b><.>bunnies/click x1.5<.>bunny production +5%
+        icon:		icon:icons[1,5]
+        cost:		cost:10000 bunnies
+        req:req:1000 bunnies:earned
+
+
+Achievements
+    *TEMPLATE
+        on click:anim glow
+
+
+    *bunnyAchiev1
+        name:run rabbit run
+        desc:		desc:Have <b>1</b> bunny.
+        icon:		icon:icons[2,4] icons[0,2] icons[0,6]
+        req:		req:1 bunny
+
+
+    *bunnyAchiev2
+        name:bunniest home videos
+        desc:		desc:Have <b>1000</b> bunnies.
+        icon:		icon:icons[2,4] icons[0,3] icons[0,6]
+        req:		req:1000 bunnies
+
+
+    *bunnyAchiev3
+        name:You got buns, hun
+        desc:		desc:Have <b>1000000</b> bunnies.
+        icon:		icon:icons[2,4] icons[0,4] icons[0,6]
+        req:		req:10000000 bunnies
+
+
+    *clickAchiev1
+        name:that tickles
+        desc:		desc:Click the bunny <b>10</b> times.
+        icon:		icon:icons[2,2] icons[0,2] icons[0,6]
+        req:		req:10 bunnyButton clicks
+
